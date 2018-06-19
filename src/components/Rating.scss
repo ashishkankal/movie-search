@@ -1,0 +1,28 @@
+.rating-wrapper{
+   margin-top: 20px;
+   display: flex;
+   margin-bottom: 20px;
+    
+}
+.rating{
+    margin-right: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+
+    .rating-value{
+        font-weight: 600;
+        font-size: 14px;
+        border: 2px solid #3256f5;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .rating-factor-name{
+        font-size: 12px;
+        margin-left: 10px;
+    }
+}

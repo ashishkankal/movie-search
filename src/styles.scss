@@ -1,0 +1,268 @@
+.app {
+  font-family: "Roboto", sans-serif;
+  &-header {
+    padding: 20px;
+    background-color: #292929;
+    border-top: 6px solid #affb49;
+    color: aqua;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .search-box {
+      padding: 0px 40px;
+      input {
+        border-radius: 30px;
+        height: 32px;
+        padding: 6px 12px;
+        width: 280px;
+        border: none;
+        color: #555;
+        &:focus {
+          outline: none;
+        }
+      }
+      .search-box-button {
+        background: none;
+        border: none;
+        font-size: 18px;
+        margin-left: 10px;
+        border-radius: 50%;
+        height: 32px;
+        width: 32px;
+        transition: background-color 0.2s;
+        &:hover {
+          background-color: #555;
+        }
+      }
+    }
+  }
+  &-body {
+    padding: 30px;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .movie-wrapper {
+      display: flex;
+      padding-bottom: 20px;
+      background-color: #e9e9e9;
+      padding: 18px;
+      border-radius: 5px;
+    }
+  }
+  .watched-badge {
+    cursor: default;
+    background-color: #7dc74b;
+    text-transform: uppercase;
+    border-radius: 20px;
+    font-weight: 600;
+    border-radius: 20px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+  }
+}
+
+.movie-image {
+  img {
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #000;
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0px 0px 25px #000;
+    }
+  }
+  .no-movie-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      box-shadow: none;
+      opacity: 0.1;
+    }
+  }
+}
+.watched-movie-image {
+  background-color: #000;
+  border-radius: 5px;
+  position: relative;
+  .watched-movie-title {
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  img {
+    border-radius: 5px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .watched-movie-image-info {
+    opacity: 0;
+    transition: opacity 0.1s;
+    text-shadow: #000 1px 0 15px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .like-dislike {
+      margin-top: 30px;
+      justify-content: space-evenly;
+      display: flex;
+      font-size: 25px;
+      .thumb {
+        padding: 5px;
+        background-color: #fff;
+        border-radius: 50%;
+        height: 32px;
+        width: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-shadow: none;
+        color: #555;
+        &:hover {
+          cursor: pointer;
+        }
+        &.__selected {
+          .fa-thumbs-o-up,
+          .fa-thumbs-up {
+            color: #0ac100;
+          }
+          .fa-thumbs-down,
+          .fa-thumbs-o-down {
+            color: #ec3636;
+          }
+        }
+      }
+    }
+  }
+  &:hover {
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    .watched-movie-image-info {
+      opacity: 1;
+    }
+    img {
+      opacity: 0;
+    }
+  }
+}
+.watched-movies {
+  margin-top: 20px;
+  background-color: #e9e9e9;
+  padding: 20px;
+  border-radius: 5px;
+  .watched-movies-header {
+    display: flex;
+    justify-content: space-between;
+    .watched-movies-title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .view-all-link {
+      &:hover {
+        cursor: pointer;
+        text-decoration: none;
+      }
+    }
+  }
+  .no-movies-section {
+    background-color: #fff;
+    padding: 20px;
+    color: #999;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    height: 120px;
+    flex-direction: column;
+    font-size: 18px;
+    .fa-binoculars {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+  }
+  .watched-movies-content {
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    .watched-movie-image {
+      margin-left: 10px;
+      margin-top: 20px;
+    }
+  }
+
+  .fade-enter {
+    opacity: 0.01;
+    transform: translateY(50px);
+  }
+
+  .fade-enter.fade-enter-active {
+    transition: opacity 250ms ease-in;
+    opacity: 1;
+  }
+
+  .fade-appear {
+    opacity: 0.01;
+  }
+  .fade-appear.fade-appear-active {
+    opacity: 1;
+    transition: opacity 250ms ease-in;
+  }
+
+  .fade-leave {
+    opacity: 1;
+  }
+
+  .fade-leave.fade-leave-active {
+    opacity: 0.01;
+    transition: opacity 100ms ease-in;
+  }
+}
+
+.release-date {
+  display: inline-flex;
+  border: 1px solid;
+  align-items: center;
+  border-radius: 30px;
+  background-color: #fff;
+  .release-date-icon {
+    padding: 5px 6.5px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    background-color: rgb(228, 109, 109);
+    color: rgb(255, 255, 255);
+    display: flex;
+  }
+  .release-date-value {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+.not-searched-section,
+.noresult-found {
+  border-radius: 5px;
+  background-color: #e9e9e9;
+  padding: 20px;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #999999;
+  font-size: 20px;
+  flex-direction: column;
+  .fa-search,
+  .fa-exclamation-triangle {
+    font-size: 54px;
+    margin-bottom: 15px;
+  }
+}
