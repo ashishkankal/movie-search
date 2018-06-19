@@ -1,0 +1,48 @@
+{
+  "name": "movie.search",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "0.17.1",
+    "babel-polyfill": "^6.26.0",
+    "bootstrap": "3.3.7",
+    "classnames": "^2.2.6",
+    "detect-browser": "2.0.0",
+    "eslint-plugin-dependencies": "^2.4.0",
+    "immutability-helper": "^2.5.1",
+    "jshint": "^2.9.5",
+    "node-sass-chokidar": "0.0.3",
+    "npm-run-all": "4.1.2",
+    "prettier": "^1.9.2",
+    "random-js": "1.0.8",
+    "react": "^16.4.1",
+    "react-bootstrap": "0.31.5",
+    "react-dom": "16.2.0",
+    "react-redux": "5.0.6",
+    "react-router-dom": "4.2.2",
+    "react-scripts": "1.0.17",
+    "react-spring": "5.3.1",
+    "react-test-renderer": "^16.2.0",
+    "redux": "3.7.2",
+    "redux-promise": "0.5.3",
+    "redux-thunk": "2.2.0",
+    "source-map": "0.6.1",
+    "string-mask": "^0.3.0",
+    "url-search-params-polyfill": "^2.0.1"
+  },
+  "scripts": {
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm run react-scripts build",
+    "eject": "react-scripts eject",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "prettier": "prettier --write \"src/**/*.{js,jsx}\"",
+    "test": "react-scripts test --env=jsdom"
+  },
+  "devDependencies": {
+    "expect-react-shallow": "^1.2.1",
+    "istanbul": "^1.0.0-alpha.2",
+    "react-svg-loader": "^2.1.0"
+  }
+}
